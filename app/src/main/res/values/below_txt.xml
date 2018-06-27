@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="spingarr">
+        <item>土地利用规划</item>
+        <item>土地利用现状</item>
+        <item>永久基本农田</item>
+    </string-array>
+</resources>

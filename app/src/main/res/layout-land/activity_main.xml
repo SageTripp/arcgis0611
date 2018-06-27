@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--<RelativeLayout-->
+    <!--android:id="@+id/lLay_top"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="50dp"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:background="#0f0">-->
+    <!--</RelativeLayout>-->
+
+    <LinearLayout
+        android:id="@+id/lLay_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ff0"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/lLay_map"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal">
+
+            <com.esri.arcgisruntime.mapping.view.MapView
+                android:id="@+id/mapView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"></com.esri.arcgisruntime.mapping.view.MapView>
+
+            <ImageView
+                android:id="@+id/map_tool_compass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/map_tool_bg"
+                android:src="@drawable/map_tool_compass" />
+            <ImageView
+                android:id="@+id/map_tool_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="50dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/map_tool_bg"
+                android:src="@drawable/map_tool_location" />
+            <AutoCompleteTextView
+                android:id="@+id/PoiSearch"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/map_edit_bg"
+                android:ems="10"
+                android:hint="请输入查询位置"
+                android:drawableRight="@drawable/map_search"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:completionThreshold="1"
+                android:imeOptions="actionDone|flagNoExtractUi|flagNoFullscreen"
+                android:textColor="#000000"
+                android:textColorHint="#969696"
+
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="20dp"
+                android:orientation="horizontal">
+
+
+
+                <LinearLayout
+                    android:id="@+id/linearLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginLeft="100dp"
+                    android:background="@drawable/toolbarborder"
+                    android:gravity="center_horizontal"
+                    android:orientation="horizontal"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp">
+
+                    <TextView
+                        android:id="@+id/map_tool_map"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/tool_map_selector"
+                        android:gravity="center_horizontal"
+                        android:text="项 目"
+                         />
+
+                    <TextView
+                        android:id="@+id/map_tool_distance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_distance_selector"
+                        android:gravity="center_horizontal"
+                        android:text="测 距" />
+
+                    <TextView
+                        android:id="@+id/map_tool_area"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_area_selector"
+                        android:gravity="center_horizontal"
+                        android:text="面 积" />
+
+                    <TextView
+                        android:id="@+id/map_tool_query"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_query_selector"
+                        android:gravity="center_horizontal"
+                        android:text="查 询" />
+
+                    <TextView
+                        android:id="@+id/map_tool_label"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_label_selector"
+                        android:gravity="center_horizontal"
+                        android:text="标 注" />
+
+                    <TextView
+                        android:id="@+id/map_tool_phono"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_phono_selector"
+                        android:gravity="center_horizontal"
+                        android:text="拍 照" />
+
+                    <TextView
+                        android:id="@+id/map_tool_clear"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:background="@drawable/map_tool_bg"
+                        android:drawableTop="@drawable/map_tool_clear_selector"
+                        android:gravity="center_horizontal"
+                        android:text="清 除" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_gravity="right|bottom"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/toolbarborder"
+                    android:orientation="vertical"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="5dp">
+
+                    <ImageView
+                        android:id="@+id/map_tool_zoom_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/map_tool_bg"
+                        android:src="@drawable/map_tool_zoom_in" />
+                    <ImageView
+                        android:id="@+id/map_tool_zoom_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/map_tool_bg"
+                        android:src="@drawable/map_tool_zoom_out" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/lLay_tool"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="#D8D8D8"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_tool_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tool_bg_selector"
+                android:drawableTop="@drawable/tool_map_manager"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="图 层\n管 理"
+                android:textColor="@color/rosybrown"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/txt_tool_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tool_bg_selector"
+                android:drawableTop="@drawable/tool_search_selector"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="搜 索"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/grey" />
+
+            <TextView
+                android:id="@+id/txt_tool_analyse"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tool_bg_selector"
+                android:drawableTop="@drawable/tool_analyse_selector"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="分 析"
+                android:textSize="18sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="0dp"
+                android:background="@color/gray" />
+
+            <TextView
+                android:id="@+id/txt_tool_mine"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/tool_bg_selector"
+                android:drawableTop="@drawable/tool_mine_selector"
+                android:gravity="center_horizontal"
+                android:padding="5dp"
+                android:text="我 的"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/lLay_tab"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="#fff"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="5dp">
+
+            <LinearLayout
+                android:id="@+id/lLay_tool_map"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ExpandableListView
+                    android:id="@+id/lVi_layers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:cacheColorHint="@null"
+                    android:childDivider="@null"
+                    android:childIndicator="@null"
+                    android:divider="@null"
+                    android:dividerHeight="0dip"
+                    android:fadeScrollbars="false"
+                    android:fadingEdge="none"
+                    android:groupIndicator="@null"
+                    android:listSelector="#00000000"
+                    android:overScrollMode="never"
+                    android:scrollingCache="false"
+                    android:transcriptMode="disabled"></ExpandableListView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLay_tool_search"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_tool_title"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="关键字 : "
+                        android:textSize="20sp" />
+
+                    <EditText
+                        android:id="@+id/txt_tool_content"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:background="@drawable/map_edit_bg"
+                        android:maxLines="1"
+                        android:inputType="text"
+                        android:imeOptions="flagNoExtractUi"
+                        android:padding="@dimen/edit_padding" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginTop="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/txt_tool_layer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:text="图层 : "
+                        android:textSize="20sp" />
+
+                    <Spinner
+                        android:id="@+id/txt_tool_query"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:entries="@array/spingarr"
+                        android:spinnerMode="dropdown" />
+                </RelativeLayout>
+
+                <Button
+                    android:id="@+id/btn_search"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/map_button_bg"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:text="搜索" />
+
+                <ListView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/lv_searchResult"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/map_button_bg"
+                    android:ellipsize="end"
+                    android:padding="5dp"
+                    android:singleLine="false" />
+            </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/lLay_tool_analyse"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="土地分析"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/analyse_tool_draw"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/map_tool_bg"
+                            android:drawableTop="@drawable/map_tool_draw"
+                            android:gravity="center_horizontal"
+                            android:text="绘 制"
+                            android:textSize="20sp" />
+
+
+
+                        <TextView
+                            android:id="@+id/analyse_tool_reset"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/map_tool_bg"
+                            android:drawableTop="@drawable/map_tool_reset_selector"
+                            android:gravity="center_horizontal"
+                            android:text="重 置"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+                        <TextView
+                            android:id="@+id/guihua_analyse_tool_analyse"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/map_tool_bg"
+                            android:drawableTop="@drawable/map_tool_analysis"
+                            android:gravity="center_horizontal"
+                            android:text="规划分析"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/xianzhuang_analyse_tool_analyse"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/map_tool_bg"
+                            android:drawableTop="@drawable/map_tool_analysis"
+                            android:gravity="center_horizontal"
+                            android:text="现状分析"
+                            android:textSize="20sp" />
+
+                        <TextView
+                            android:id="@+id/nongtian_analyse_tool_analyse"
+                            android:layout_width="0dip"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:background="@drawable/map_tool_bg"
+                            android:drawableTop="@drawable/map_tool_analysis"
+                            android:gravity="center_horizontal"
+                            android:text="农田分析"
+                            android:textSize="20sp" />
+                    </LinearLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_marginBottom="0dp"
+                        android:layout_marginTop="0dp"
+                        android:background="@color/gray" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:text="基本农田补划"
+                        android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center_vertical"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/buhua_label"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:text="补划面积 : "
+                                android:textSize="20sp" />
+
+                            <EditText
+                                android:id="@+id/txt_area"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:inputType="number|numberDecimal"
+                                android:imeOptions="flagNoExtractUi"
+                                android:layout_toLeftOf="@+id/buhua_area"
+                                android:layout_toRightOf="@+id/buhua_label" />
+
+                            <TextView
+                                android:id="@+id/buhua_area"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_centerVertical="true"
+
+                                android:text="平方米"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btn_buhua"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/map_button_bg"
+                        android:paddingBottom="5dp"
+                        android:paddingTop="5dp"
+                        android:text="补划查询" />
+
+                    <ListView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/lv_buhuaResult"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="20dp"
+                        android:background="@drawable/map_button_bg"
+                        android:ellipsize="end"
+                        android:padding="5dp"
+                        android:singleLine="false" />
+                </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lLay_tool_mine"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="我的消息"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="我的办公"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="意见反馈"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="关于我们"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/tv_exit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="left"
+                    android:layout_marginTop="10dp"
+                    android:text="退出"
+                    android:textSize="20sp" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

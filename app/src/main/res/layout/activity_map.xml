@@ -1,0 +1,250 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/transparency"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/lLayMapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignTop="@+id/lLayButton"
+        android:orientation="vertical" >
+
+        <com.esri.arcgisruntime.mapping.view.MapView
+            android:id="@+id/mapView"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" >
+        </com.esri.arcgisruntime.mapping.view.MapView>
+
+        <LinearLayout
+            android:id="@+id/lLay_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp"
+            android:orientation="vertical">
+
+            <SearchView
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/map_search_bg"
+                android:queryHint="搜地点"
+                android:iconifiedByDefault="false"
+                android:textColorHint="@color/black"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lLay_search"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:paddingLeft="10dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/lVi_layer_manager"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lLay_search"
+                android:background="@drawable/layermanage"
+                android:drawableTop="@drawable/map_layer_manager"
+                android:padding="3dp"
+                android:text="图层管理" />
+
+
+            <ExpandableListView
+                android:id="@+id/lVi_layers"
+                android:layout_width="150dp"
+                android:layout_height="350dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/lLay_search"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/map_layer_bg"
+                android:fadeScrollbars="false"
+                android:scrollingCache="false"
+                android:overScrollMode="never"
+                android:divider="@null"
+                android:dividerHeight="0dip"
+                android:cacheColorHint="@null"
+                android:fadingEdge="none"
+                android:groupIndicator="@null"
+                android:childIndicator="@null"
+                android:listSelector="#00000000"
+                android:childDivider="@null"
+                android:transcriptMode="disabled"
+                android:visibility="gone">
+            </ExpandableListView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/lLay_search"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+
+            android:background="@drawable/toolbarborder"
+            android:orientation="vertical"
+            android:paddingBottom="10dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/tvLayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_layer"
+                android:padding="2dp"
+                android:text="图层" />
+
+            <TextView
+                android:id="@+id/tvDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_distance"
+                android:padding="2dp"
+                android:text="测距" />
+
+            <TextView
+                android:id="@+id/tvArea"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_area"
+                android:padding="2dp"
+                android:text="面积" />
+
+            <TextView
+                android:id="@+id/tvQuery"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_query"
+                android:padding="2dp"
+                android:text="查询" />
+
+            <TextView
+                android:id="@+id/tvLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_label"
+                android:padding="2dp"
+                android:text="标注" />
+
+            <TextView
+                android:id="@+id/tvPhoto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_phone"
+                android:padding="2dp"
+                android:text="拍照" />
+
+            <TextView
+                android:id="@+id/tvDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/txt_shade_state"
+                android:drawableTop="@drawable/map_layer_manager"
+                android:padding="2dp"
+                android:text="清除" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="70dp"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/zoomborder"
+            android:orientation="vertical"
+            android:padding="3dp">
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="2dp"
+                android:background="@drawable/map_location" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="70dp"
+            android:layout_marginRight="15dp"
+            android:background="@drawable/zoomborder"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/tvzoomin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/map_zoom_in" />
+
+            <ImageView
+                android:id="@+id/tvzoomout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/map_zoom_out" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/lLayButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal" >
+        <Button
+            android:id="@+id/btn_analyze"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="分析"
+            android:background="@drawable/map_button_bg"
+            android:textSize="20sp"/>
+
+        <Button
+            android:id="@+id/btn_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="设置"
+            android:background="@drawable/map_button_bg"
+            android:textSize="20sp"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

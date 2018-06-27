@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">一张图</string>
+    <string name="read_permission_denied">访问SD卡被拒绝，无法加载图层</string>
+    <string name="shapefile_path">/yzt/demo/cun.shp</string>
+    <string name="shapefile_xian_path">/yzt/demo/xian.shp</string>
+    <string name="shapefile_zhen_path">/yzt/demo/zhen.shp</string>
+    <string name="shapefile_farm_path">/yzt/demo/tsnt.shp</string>
+    <string name="shapefile_status_path">/yzt/demo/tdlyxz.shp</string>
+    <string name="shapefile_plan_path">/yzt/demo/tdlygh.shp</string>
+    <string name="shp_jcdl_xian">/yzt/demo/行政区划/行政县.shp</string>
+    <string name="shp_jcdl_xiang">/yzt/demo/行政区划/行政乡.shp</string>
+    <string name="shp_jcdl_cun">/yzt/demo/行政区划/行政村.shp</string>
+    <string name="shp_jcdl_image">/yzt/demo/ZMD.tpk</string>
+    <string name="shp_dzjc_tdgh">/yzt/demo/土地利用规划/QT_GHDL.shp</string>
+    <string name="shp_dzjc_tdghtpk">/yzt/demo/土地利用规划/土地利用规划切片.tpk</string>
+    <string name="shp_dzjc_tdxz">/yzt/demo/土地利用现状/TDLY_DLTB.shp</string>
+    <string name="shp_dzjc_tdxztpk">/yzt/demo/土地利用现状/土地利用现状切片.tpk</string>
+    <string name="shp_dzjc_yjjbnt">/yzt/demo/基本农田/JBNT_YJJBNTTB.shp</string>>
+    <string name="shp_dzjc_ssnyd">/yzt/demo/设施农用地/SSNYD.shp</string>
+    <string name="shp_tddc_baopi">/yzt/demo/报批供地/报批.shp</string>
+    <string name="shp_tddc_gongdi">/yzt/demo/报批供地/供地.shp</string>
+    <string name="shp_tddc_gyccyd">/yzt/demo/其他/工业仓储用地.shp</string>
+    <string name="shp_tddc_ncjsyd">/yzt/demo/其他/农村建设用地.shp</string>
+    <string name="shp_tddc_nclztd">/yzt/demo/其他/农村流转土地.shp</string>
+    <string name="shp_tddc_pewj">/yzt/demo/其他/批而未建.shp</string>
+    <string name="shp_tddc_xzd">/yzt/demo/其他/闲置地.shp</string>
+    <string name="shp_tdqs_tdsyq">/yzt/demo/土地权属/TDQS_SYQ.shp</string>
+    <string name="shp_tdqs_zd">/yzt/demo/土地权属/TDQS_ZD.shp</string>
+    <string name="shp_xmfw_xmfw">/yzt/demo/项目范围/项目范围.shp</string>
+    <string name="shp_xmfw_sdqy">/yzt/demo/项目范围/三区.shp</string>
+</resources>
