@@ -9,7 +9,8 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import com.example.ucmap.activity.R;
+
+import com.example.ucmap.R;
 import com.example.ucmap.bean.LayerBean;
 
 import java.util.ArrayList;

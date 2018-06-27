@@ -20,55 +20,6 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.9" />
 
-    <RadioGroup
-        android:id="@+id/rg_left_menu_bar"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/colorPrimary"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/gl_bottom_tool_bar"
-        app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1" />
-    </RadioGroup>
-
-    <TextView
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="设置"
-        android:textColor="#FEFEFE"
-        android:textSize="33sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/gl_bottom_tool_bar" />
-
 
     <com.esri.arcgisruntime.mapping.view.MapView
         android:id="@+id/mv_main"
@@ -79,5 +30,193 @@
         app:layout_constraintStart_toStartOf="@id/gl_left_menu_bar"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_icon"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <devlight.io.library.ntb.NavigationTabBar
+        android:id="@+id/ntb_left_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@id/gl_bottom_tool_bar"
+        app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_icon"
+        app:ntb_active_color="@color/colorPrimary"
+        app:ntb_animation_duration="300"
+        app:ntb_badged="false"
+        app:ntb_bg_color="@color/colorPrimary"
+        app:ntb_icon_size_fraction="0.6"
+        app:ntb_inactive_color="@color/white"
+        app:ntb_scaled="true"
+        app:ntb_swiped="true"
+        app:ntb_tinted="true"
+        app:ntb_title_mode="all"
+        app:ntb_title_size="12sp"
+        app:ntb_titled="true" />
+
+    <CheckBox
+        android:id="@+id/cb_tool"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/menu_background_color"
+        android:button="@null"
+        android:drawableTop="@drawable/icon_tool"
+        android:gravity="center"
+        android:text="设置"
+        android:textColor="@color/menu_label_color"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gl_bottom_tool_bar" />
+
+    <RadioGroup
+        android:id="@+id/rg_tool_bar"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="3dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/gl_left_menu_bar"
+        app:layout_constraintTop_toBottomOf="@id/gl_bottom_tool_bar">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="项目"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="测距"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="面积"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="查询"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="标注"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="拍照"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="3dp"
+            android:layout_marginEnd="3dp"
+            android:button="@null"
+            android:drawableTop="@drawable/icon_head_select"
+            android:text="清除"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:layout_width="56dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/location_bg"
+        android:orientation="vertical"
+        app:layout_constraintDimensionRatio="2.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_compass"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/map_tool_compass" />
+
+        <Button
+            android:id="@+id/btn_location"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="@drawable/map_tool_location" />
+
+    </LinearLayout>
+
+    <AutoCompleteTextView
+        android:id="@+id/atv_location_search"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="56dp"
+        android:background="@drawable/location_bg"
+        android:drawableLeft="@drawable/map_search"
+        android:drawablePadding="8dp"
+        android:gravity="center"
+        android:hint="请输入查询位置"
+        android:padding="4dp"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5" />
 
 </android.support.constraint.ConstraintLayout>

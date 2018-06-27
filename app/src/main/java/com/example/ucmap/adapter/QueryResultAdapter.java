@@ -14,7 +14,7 @@ import com.esri.arcgisruntime.geometry.GeometryEngine;
 import com.esri.arcgisruntime.layers.FeatureLayer;
 import com.esri.arcgisruntime.layers.Layer;
 import com.esri.arcgisruntime.mapping.view.MapView;
-import com.example.ucmap.activity.R;
+import com.example.ucmap.R;
 import java.util.List;
 
 /**

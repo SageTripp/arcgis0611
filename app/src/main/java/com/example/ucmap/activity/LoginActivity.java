@@ -100,7 +100,8 @@ public class LoginActivity extends Activity implements ICallback {
 
                 if (checkUser(userName, passWord)) {
 
-                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+//                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, TestActivity.class);
                     startActivity(intent);
 
                 } else {

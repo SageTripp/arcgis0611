@@ -5,7 +5,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.os.Environment;
 import android.util.Log;
 
-import com.example.ucmap.activity.R;
+
+import com.example.ucmap.R;
 
 import java.io.File;
 import java.io.FileNotFoundException;
