@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:focusableInTouchMode="true"
     tools:context=".activity.MapActivity">
 
     <android.support.constraint.Guideline
@@ -35,6 +37,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@color/colorPrimary"
+        android:contentDescription="@null"
         android:src="@drawable/ic_icon"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
@@ -60,20 +63,22 @@
         app:ntb_swiped="true"
         app:ntb_tinted="true"
         app:ntb_title_mode="all"
-        app:ntb_title_size="12sp"
+        app:ntb_title_size="22sp"
         app:ntb_titled="true" />
 
     <CheckBox
+        android:paddingTop="10dp"
         android:id="@+id/cb_tool"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@drawable/menu_background_color"
+        android:background="@drawable/tool_button_bg"
         android:button="@null"
         android:drawableTop="@drawable/icon_tool"
         android:gravity="center"
+        android:padding="4dp"
         android:text="设置"
         android:textColor="@color/menu_label_color"
-        android:textSize="12sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/gl_left_menu_bar"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +91,9 @@
         android:background="@color/white"
         android:gravity="center"
         android:orientation="horizontal"
-        android:padding="3dp"
+        android:padding="4dp"
+        android:paddingEnd="96dp"
+        android:paddingStart="96dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -94,80 +101,80 @@
         app:layout_constraintTop_toBottomOf="@id/gl_bottom_tool_bar">
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="项目"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="测距"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="面积"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="查询"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="标注"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="拍照"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
 
 
         <RadioButton
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginStart="3dp"
-            android:layout_marginEnd="3dp"
+            android:layout_weight="1"
             android:button="@null"
             android:drawableTop="@drawable/icon_head_select"
+            android:gravity="center"
             android:text="清除"
             android:textColor="@color/colorPrimary"
             android:textSize="16sp" />
@@ -175,48 +182,57 @@
     </RadioGroup>
 
 
-    <LinearLayout
-        android:layout_width="56dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginEnd="44dp"
+        android:layout_marginTop="44dp"
         android:background="@drawable/location_bg"
-        android:orientation="vertical"
-        app:layout_constraintDimensionRatio="2.2"
+        android:padding="4dp"
+        app:layout_constraintDimensionRatio="1:2.1"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.15"
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
             android:id="@+id/btn_compass"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:background="@drawable/map_tool_compass" />
+            android:background="@drawable/map_tool_compass"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btn_location"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@drawable/map_tool_location" />
+            android:background="@drawable/map_tool_location"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintDimensionRatio="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 
     <AutoCompleteTextView
         android:id="@+id/atv_location_search"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="28dp"
         android:background="@drawable/location_bg"
         android:drawableLeft="@drawable/map_search"
         android:drawablePadding="8dp"
         android:gravity="center"
         android:hint="请输入查询位置"
-        android:padding="4dp"
-        android:textSize="16sp"
+        android:padding="8dp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.5" />
+        app:layout_constraintHeight_percent="0.06"
+        app:layout_constraintWidth_percent="0.33" />
 
 </android.support.constraint.ConstraintLayout>
