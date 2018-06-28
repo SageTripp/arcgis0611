@@ -57,7 +57,7 @@
         app:ntb_animation_duration="300"
         app:ntb_badged="false"
         app:ntb_bg_color="@color/colorPrimary"
-        app:ntb_icon_size_fraction="0.6"
+        app:ntb_icon_size_fraction="0.5"
         app:ntb_inactive_color="@color/white"
         app:ntb_scaled="true"
         app:ntb_swiped="true"
@@ -66,8 +66,18 @@
         app:ntb_title_size="22sp"
         app:ntb_titled="true" />
 
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_menu"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/menu_background"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@id/gl_bottom_tool_bar"
+        app:layout_constraintStart_toEndOf="@id/gl_left_menu_bar"
+        app:layout_constraintTop_toTopOf="@id/ntb_left_menu"
+        app:layout_constraintWidth_percent="0.33" />
+
     <CheckBox
-        android:paddingTop="10dp"
         android:id="@+id/cb_tool"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -75,7 +85,7 @@
         android:button="@null"
         android:drawableTop="@drawable/icon_tool"
         android:gravity="center"
-        android:padding="4dp"
+        android:padding="10dp"
         android:text="设置"
         android:textColor="@color/menu_label_color"
         android:textSize="18sp"
@@ -92,8 +102,8 @@
         android:gravity="center"
         android:orientation="horizontal"
         android:padding="4dp"
-        android:paddingEnd="96dp"
         android:paddingStart="96dp"
+        android:paddingEnd="96dp"
         android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,82 +111,103 @@
         app:layout_constraintTop_toBottomOf="@id/gl_bottom_tool_bar">
 
         <RadioButton
+            android:id="@+id/rb_tool_project"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="项目"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb_tool_raging"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="测距"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb_tool_area"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="面积"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb_tool_query"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="查询"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
         <RadioButton
+            android:id="@+id/rb_tool_mark"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="标注"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
 
         <RadioButton
+            android:id="@+id/rb_tool_take_pic"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="拍照"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
 
         <RadioButton
+            android:id="@+id/rb_tool_clear"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:background="@drawable/tool_background_color"
             android:button="@null"
-            android:drawableTop="@drawable/icon_head_select"
+            android:drawableTop="@drawable/icon_head"
             android:gravity="center"
+            android:padding="10dp"
             android:text="清除"
-            android:textColor="@color/colorPrimary"
+            android:textColor="@color/tool_label_color"
             android:textSize="16sp" />
 
     </RadioGroup>
@@ -185,8 +216,8 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="44dp"
         android:layout_marginTop="44dp"
+        android:layout_marginEnd="44dp"
         android:background="@drawable/location_bg"
         android:padding="4dp"
         app:layout_constraintDimensionRatio="1:2.1"
@@ -199,10 +230,10 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:background="@drawable/map_tool_compass"
-            app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <Button
             android:id="@+id/btn_location"
@@ -230,9 +261,9 @@
         android:padding="8dp"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.06"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHeight_percent="0.06"
         app:layout_constraintWidth_percent="0.33" />
 
 </android.support.constraint.ConstraintLayout>

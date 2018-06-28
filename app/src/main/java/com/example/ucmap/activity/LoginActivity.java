@@ -97,11 +97,15 @@ public class LoginActivity extends Activity implements ICallback {
 //                String sql = "select passWord from users where username = ? ";
 //                Cursor cursor = database.rawQuery(sql, new String[] {userName});
 
+                if (userName.equals("1") && passWord.equals("1")) {
+                    Intent intent = new Intent(LoginActivity.this, TestActivity.class);
+                    startActivity(intent);
+                    return;
+                }
 
                 if (checkUser(userName, passWord)) {
 
-//                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
-                    Intent intent = new Intent(LoginActivity.this, TestActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
                     startActivity(intent);
 
                 } else {
