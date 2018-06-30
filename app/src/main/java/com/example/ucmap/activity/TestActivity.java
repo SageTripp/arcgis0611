@@ -2,34 +2,42 @@ package com.example.ucmap.activity;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.constraint.ConstraintLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AutoCompleteTextView;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.example.ucmap.R;
+import com.example.ucmap.adapter.AnalysisResultAdapter;
+import com.example.ucmap.adapter.LayerAdapter;
 import com.example.ucmap.adapter.MenuPageAdapter;
+import com.example.ucmap.bean.LandType;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import devlight.io.library.ntb.NavigationTabBar;
 
-public class TestActivity extends AppCompatActivity implements View.OnClickListener {
+public class TestActivity extends AppCompatActivity implements LayerAdapter.LoadingListener {
     private NavigationTabBar leftMenu;
     private CheckBox toolMenu;
     private RadioGroup toolBar;
     private String selected = "";
     private ViewPager menuPanel;
     private AutoCompleteTextView searchTextView;
-    private Button btnLocation;
-    private Button btnCompass;
     private MenuPageAdapter menuAdapter;
+    private RecyclerView analysisResult;
+    private ArrayList<LandType> analysisLands = new ArrayList<>();
+    private AnalysisResultAdapter adapter;
+    private ConstraintLayout analysisResultPanel;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,10 +56,15 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         initLeftMenu();
         initTool();
         searchTextView = findViewById(R.id.atv_location_search);
-        btnLocation = findViewById(R.id.btn_location);
-        btnCompass = findViewById(R.id.btn_compass);
-        btnLocation.setOnClickListener(this);
-        btnCompass.setOnClickListener(this);
+        initAnalysis();
+    }
+
+    private void initAnalysis() {
+        analysisResultPanel = findViewById(R.id.con_analysis_result);
+        analysisResult = findViewById(R.id.rv_analysis_result);
+        adapter = new AnalysisResultAdapter(analysisLands);
+        analysisResult.setAdapter(adapter);
+        analysisResult.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
     }
 
     /**
@@ -71,18 +84,25 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 switch (checkedId) {
                     case R.id.rb_tool_project://项目
+                        Toast.makeText(TestActivity.this, "项目", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_raging://测距
+                        Toast.makeText(TestActivity.this, "测距", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_area://面积
+                        Toast.makeText(TestActivity.this, "面积", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_query://搜索
+                        Toast.makeText(TestActivity.this, "搜索", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_take_pic://拍照
+                        Toast.makeText(TestActivity.this, "拍照", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_mark://标注
+                        Toast.makeText(TestActivity.this, "标注", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.rb_tool_clear://清除
+                        Toast.makeText(TestActivity.this, "清除", Toast.LENGTH_SHORT).show();
                         break;
                 }
             }
@@ -97,7 +117,7 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
         NavigationTabBar.Model layerModel = new NavigationTabBar.Model.Builder(
                 getResources().getDrawable(R.drawable.icon_layer_normal),
                 getResources().getColor(R.color.white)
-        ).title("图层\n管理")
+        ).title("图层")
                 .build();
         NavigationTabBar.Model searchModel = new NavigationTabBar.Model.Builder(
                 getResources().getDrawable(R.drawable.icon_search_normal),
@@ -137,10 +157,10 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                     menuPanel.setCurrentItem(0);
                 } else {
                     selected = model.getTitle();
-                    menuPanel.setCurrentItem(index,false);
+                    menuPanel.setCurrentItem(index, false);
                 }
                 switch (selected) {
-                    case "图层\n管理":
+                    case "图层":
                         break;
                     case "搜索":
                         break;
@@ -152,17 +172,133 @@ public class TestActivity extends AppCompatActivity implements View.OnClickListe
                         break;
                 }
                 menuPanel.setVisibility(selected.isEmpty() ? View.GONE : View.VISIBLE);
+                if (selected.isEmpty()) {
+                    analysisResultPanel.setVisibility(View.GONE);
+                }
             }
         });
     }
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.btn_location://定位
-                break;
-            case R.id.btn_compass://指向
-                break;
+
+    public void closeMenu(View view) {
+        leftMenu.deselect();
+        menuPanel.setVisibility(View.GONE);
+        analysisResultPanel.setVisibility(View.GONE);
+        selected = "";
+    }
+
+    /*
+    下边都是点击事件
+     */
+
+
+    /**
+     * 分析 -> 绘制
+     */
+    public void drawAnalysis(View view) {
+        Toast.makeText(this, "绘制", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 分析 -> 重置
+     */
+    public void resetAnalysis(View view) {
+        Toast.makeText(this, "重置", Toast.LENGTH_SHORT).show();
+    }
+
+    private void mockAnalysisData() {
+        analysisLands.clear();
+        int index = (int) (Math.random() * 40 / 2);
+        for (int i = 0; i < index; i++) {
+            double area = Math.random();
+            int num = (int) (Math.random() * 10);
+            LandType land = new LandType();
+            land.setLandTypeName("土地类型");
+            land.setTotalAreas(area);
+            land.setTotalNums(num);
+            analysisLands.add(land);
         }
+        adapter.setLands(analysisLands);
+    }
+
+    /**
+     * 分析 -> 规划分析
+     */
+    public void planningAnalysis(View view) {
+        Toast.makeText(this, "规划分析", Toast.LENGTH_SHORT).show();
+        mockAnalysisData();
+        analysisResultPanel.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 分析 -> 现状分析
+     */
+    public void situationAnalysis(View view) {
+        Toast.makeText(this, "现状分析", Toast.LENGTH_SHORT).show();
+        mockAnalysisData();
+        analysisResultPanel.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 分析 -> 农田分析
+     */
+    public void farmlandAnalysis(View view) {
+        Toast.makeText(this, "农田分析", Toast.LENGTH_SHORT).show();
+        mockAnalysisData();
+        analysisResultPanel.setVisibility(View.VISIBLE);
+    }
+
+    /**
+     * 用户 -> 我的消息
+     */
+    public void myMessage(View view) {
+        Toast.makeText(this, "我的消息", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 用户 -> 我的办公
+     */
+    public void myOffice(View view) {
+        Toast.makeText(this, "我的办公", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 用户 -> 意见反馈
+     */
+    public void feedback(View view) {
+        Toast.makeText(this, "意见反馈", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 用户 -> 关于我们
+     */
+    public void aboutUs(View view) {
+        Toast.makeText(this, "关于我们", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 用户 -> 退出
+     */
+    public void exit(View view) {
+        Toast.makeText(this, "退出", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 定位
+     */
+    public void location(View view) {
+        Toast.makeText(this, "定位", Toast.LENGTH_SHORT).show();
+    }
+
+    /**
+     * 指向
+     */
+    public void compass(View view) {
+        Toast.makeText(this, "指向", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void loadingLayer(int id, String name, boolean isVisible) {
+        Toast.makeText(this, name + (isVisible ? ": 显示" : ": 隐藏"), Toast.LENGTH_SHORT).show();
     }
 }

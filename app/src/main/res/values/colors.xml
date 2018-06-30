@@ -3,6 +3,8 @@
     <color name="colorPrimary">#06b8cf</color>
     <color name="colorPrimaryDark">#66d8ff</color>
     <color name="colorAccent">#fdfdfe</color>
+    <color name="textTitle">#909090</color>
+    <color name="menuBkg">#faf9f7</color>
 
     <!-- 基本的颜色 -->
     <color name="white">#FFFFFF</color>

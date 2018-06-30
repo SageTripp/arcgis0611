@@ -11,6 +11,18 @@ public class LayerBean {
     private boolean visible;
     private String describe;
 
+    public LayerBean() {
+    }
+
+    public LayerBean(String name) {
+        Stname = name;
+    }
+
+    public LayerBean(String name, boolean visible) {
+        Stname = name;
+        this.visible = visible;
+    }
+
     public int getId() {
         return id;
     }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:orientation="horizontal"
+    tools:showIn="@layout/layout_analysis_result">
+
+    <TextView
+        android:id="@+id/tv_kind_analysis_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/textTitle"
+        android:textSize="18sp"
+        tools:text="地类名称" />
+
+    <TextView
+        android:id="@+id/tv_area_analysis_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/textTitle"
+        android:textSize="18sp"
+        tools:text="123456" />
+
+    <TextView
+        android:id="@+id/tv_num_analysis_result"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:padding="4dp"
+        android:textColor="@color/textTitle"
+        android:textSize="18sp"
+        tools:text="6" />
+</LinearLayout>
