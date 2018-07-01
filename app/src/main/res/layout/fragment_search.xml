@@ -26,7 +26,7 @@
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:onClick="closeMenu"
-        android:padding="6dp"
+        android:padding="4dp"
         android:scaleType="fitXY"
         android:src="@drawable/icon_menu_pack_up"
         app:layout_constraintDimensionRatio="1:1"
@@ -37,12 +37,11 @@
     <LinearLayout
         android:id="@+id/ll_search_query"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:layout_marginTop="8dp"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_title_search">
 
@@ -52,7 +51,7 @@
             android:gravity="center"
             android:text="关键字:"
             android:textColor="@color/textTitle"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <EditText
             android:id="@+id/et_search_query"
@@ -62,7 +61,7 @@
             android:layout_weight="1"
             android:background="@drawable/search_bkg"
             android:padding="4dp"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
     </LinearLayout>
 
@@ -70,14 +69,13 @@
     <LinearLayout
         android:id="@+id/ll_layer_spinner"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_margin="4dp"
         android:layout_marginTop="8dp"
         android:background="@color/white"
         android:orientation="horizontal"
         android:padding="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ll_search_query">
 
@@ -87,7 +85,7 @@
             android:gravity="center"
             android:text="图    层:"
             android:textColor="@color/textTitle"
-            android:textSize="18sp" />
+            android:textSize="16sp" />
 
         <Spinner
             android:id="@+id/sp_layer_search"
@@ -110,7 +108,7 @@
         android:padding="4dp"
         android:text="搜索"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.08"
         app:layout_constraintStart_toStartOf="parent"

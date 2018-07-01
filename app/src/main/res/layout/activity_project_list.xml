@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/menuBkg"
     tools:context=".activity.ProjectListActivity">
 
     <TextView
@@ -20,12 +21,14 @@
         app:title="项目列表" />
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_project"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_project" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_title_project"
+        tools:listitem="@layout/item_project" />
 
 
 </android.support.constraint.ConstraintLayout>

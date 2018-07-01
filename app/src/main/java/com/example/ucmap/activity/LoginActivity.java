@@ -96,23 +96,20 @@ public class LoginActivity extends Activity implements ICallback {
                 String passWord = edt_userpwd.getText().toString();
 //                String sql = "select passWord from users where username = ? ";
 //                Cursor cursor = database.rawQuery(sql, new String[] {userName});
+                Intent intent = new Intent(LoginActivity.this, ProjectListActivity.class);
+                startActivity(intent);
+                return;
 
-                if (userName.equals("1") && passWord.equals("1")) {
-                    Intent intent = new Intent(LoginActivity.this, TestActivity.class);
-                    startActivity(intent);
-                    return;
-                }
-
-                if (checkUser(userName, passWord)) {
-
-                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
-                    startActivity(intent);
-
-                } else {
-
-                    Toast.makeText(LoginActivity.this, "请确认帐号密码正确", Toast.LENGTH_LONG).show();
-
-                }
+//                if (checkUser(userName, passWord)) {
+//
+//                    Intent intent = new Intent(LoginActivity.this, MapActivity.class);
+//                    startActivity(intent);
+//
+//                } else {
+//
+//                    Toast.makeText(LoginActivity.this, "请确认帐号密码正确", Toast.LENGTH_LONG).show();
+//
+//                }
 
 
             }

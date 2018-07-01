@@ -55,6 +55,8 @@ public class LayerFragment extends Fragment {
     }
 
     private void initData() {
+        groupList.clear();
+        childList.clear();
         /*
         分组
          */

@@ -15,7 +15,7 @@
         android:gravity="center"
         android:padding="4dp"
         android:textColor="@color/textTitle"
-        android:textSize="18sp"
+        android:textSize="14sp"
         tools:text="地类名称" />
 
     <TextView
@@ -26,7 +26,7 @@
         android:gravity="center"
         android:padding="4dp"
         android:textColor="@color/textTitle"
-        android:textSize="18sp"
+        android:textSize="14sp"
         tools:text="123456" />
 
     <TextView
@@ -37,6 +37,6 @@
         android:gravity="center"
         android:padding="4dp"
         android:textColor="@color/textTitle"
-        android:textSize="18sp"
+        android:textSize="14sp"
         tools:text="6" />
 </LinearLayout>

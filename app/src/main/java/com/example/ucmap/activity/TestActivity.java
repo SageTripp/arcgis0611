@@ -53,6 +53,7 @@ public class TestActivity extends AppCompatActivity implements LayerAdapter.Load
         menuPanel = findViewById(R.id.vp_menu);
         menuAdapter = new MenuPageAdapter(getSupportFragmentManager());
         menuPanel.setAdapter(menuAdapter);
+        menuPanel.setOffscreenPageLimit(4);
         initLeftMenu();
         initTool();
         searchTextView = findViewById(R.id.atv_location_search);
@@ -172,7 +173,7 @@ public class TestActivity extends AppCompatActivity implements LayerAdapter.Load
                         break;
                 }
                 menuPanel.setVisibility(selected.isEmpty() ? View.GONE : View.VISIBLE);
-                if (selected.isEmpty()) {
+                if (!selected.equals("分析")) {
                     analysisResultPanel.setVisibility(View.GONE);
                 }
             }
@@ -281,6 +282,7 @@ public class TestActivity extends AppCompatActivity implements LayerAdapter.Load
      */
     public void exit(View view) {
         Toast.makeText(this, "退出", Toast.LENGTH_SHORT).show();
+        finish();
     }
 
     /**
